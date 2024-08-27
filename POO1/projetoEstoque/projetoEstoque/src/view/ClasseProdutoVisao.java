@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import domain.ClasseProduto;
 
-public class ClaseProdutoVisao {
+public class ClasseProdutoVisao {
     public void Exibir() {
         ClasseProduto cp1 = new ClasseProduto(1, "Carnes", LocalDate.now());
         System.out.println("Classe de Produto 1: ");
