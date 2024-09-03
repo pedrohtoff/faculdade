@@ -1,21 +1,20 @@
 package view;
 
-import java.time.LocalDate;
-
+import java.util.ArrayList;
 import domain.ClasseProduto;
+import fakedb.ClasseProdutoFakeDB;
 
 public class ClasseProdutoVisao {
     public void Exibir() {
-        ClasseProduto cp1 = new ClasseProduto(1, "Carnes", LocalDate.now());
-        System.out.println("Classe de Produto 1: ");
-        System.out.println("Codigo: " + cp1.getCodigo());
-        System.out.println("Descrição: " + cp1.getDescricao());
-        System.out.println("Data de inclusão: " + cp1.getDataInclusao());
-
-        ClasseProduto cp2 = new ClasseProduto(2, "Bebidas", LocalDate.now());
-        System.out.println("Classe de Produto 2: ");
-        System.out.println("Codigo: " + cp2.getCodigo());
-        System.out.println("Descrição: " + cp2.getDescricao());
-        System.out.println("Data de inclusão: " + cp2.getDataInclusao());
+        ClasseProdutoFakeDB db = new ClasseProdutoFakeDB();
+        ArrayList<ClasseProduto> lista = db.getTabela();
+        System.out.println("==========================================");
+        for (ClasseProduto cp : lista) {
+            System.out.println("Classe de produto: ");
+            System.out.println("Código: " + cp.getCodigo());
+            System.out.println("Descrição: " + cp.getDescricao());
+            System.out.println("Data de Inclusao: " + cp.getDataInclusao());
+            System.out.println("------------------------------------");
+        }
     }
 }
