@@ -19,9 +19,9 @@ public class ProdutoFakeDB extends BaseFakeDB<Produto> {
         this.tabela.add(new Produto(7, "Laranja", LocalDate.now(), 4, 32.99));
         this.tabela.add(new Produto(8, "Uva", LocalDate.now(), 4, 32.99));
         this.tabela.add(new Produto(9, "Grego", LocalDate.now(), 5, 32.99));
-        this.tabela.add(new Produto(10, "", LocalDate.now(), 5, 32.99));
-        this.tabela.add(new Produto(11, "", LocalDate.now(), 6, 32.99));
-        this.tabela.add(new Produto(12, "", LocalDate.now(), 6, 32.99));
+        this.tabela.add(new Produto(10, "Morango", LocalDate.now(), 5, 32.99));
+        this.tabela.add(new Produto(11, "Sem Lactose", LocalDate.now(), 6, 32.99));
+        this.tabela.add(new Produto(12, "Integral", LocalDate.now(), 6, 32.99));
 
     }
 
