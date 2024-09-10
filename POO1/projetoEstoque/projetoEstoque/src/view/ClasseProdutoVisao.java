@@ -3,18 +3,21 @@ package view;
 import java.util.ArrayList;
 import domain.ClasseProduto;
 import fakedb.ClasseProdutoFakeDB;
+import repository.ClasseProdutoRepo;
 
 public class ClasseProdutoVisao {
     public void Exibir() {
-        ClasseProdutoFakeDB db = new ClasseProdutoFakeDB();
-        ArrayList<ClasseProduto> lista = db.getTabela();
-        System.out.println("==========================================");
+        ClasseProdutoRepo repo = new ClasseProdutoRepo();
+        ArrayList<ClasseProduto> lista = repo.Browse();
         for (ClasseProduto cp : lista) {
-            System.out.println("Classe de produto: ");
-            System.out.println("Código: " + cp.getCodigo());
-            System.out.println("Descrição: " + cp.getDescricao());
-            System.out.println("Data de Inclusao: " + cp.getDataInclusao());
-            System.out.println("------------------------------------");
+            this.Imprimir(cp);
         }
+    }
+
+    private void Imprimir(ClasseProduto alvo) {
+        System.out.println("Classe de Produto:");
+        System.out.println("Código: " + alvo.getCodigo());
+        System.out.println("Descrição: " + alvo.getDescricao());
+        System.out.println("Data de Inclusão: " + alvo.getDataDeInclusao());
     }
 }
